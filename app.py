@@ -24,13 +24,13 @@ response5 = books.read()
 
 #"http://api.nytimes.com/svc/books/v2/lists/hardcover-fiction.json?&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313"
 
+@app.route("/")
+@app.route("/search")
+def search():
+    return render_template("search.html")
+
 if __name__ == "__main__":
-    print response
-    print "\n\n"
-    print response2
-    print "\n\n"
-    print response3
-    print "\n\n"
-    print response4
-    print "\n\n"
-    print response5
+    #print response
+    #print "\n\n"
+    app.debug = True
+    app.run()
