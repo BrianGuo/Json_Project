@@ -11,7 +11,7 @@ response = books.read()
 request2 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists.json?list-name=hardcover-fiction&rank=1&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
 books = urlopen(request2)
 response2 = books.read()
-request3 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/best-sellers/history.json?&age_group=Ages+5+to+8&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
+request3 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/best-sellers/history.json?&age_group=Ages+5+and+up&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
 books = urlopen(request3)
 response3 = books.read()
 request4 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/overview.json?published_date=2013-05-14&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
@@ -32,5 +32,13 @@ def search():
 if __name__ == "__main__":
     #print response
     #print "\n\n"
-    app.debug = True
-    app.run()
+    #print response2
+    #print "\n\n"
+    print response3
+    print "\n\n"
+    #print response4
+    #print "\n\n"
+    #print response5
+    #print "\n\n"
+    #app.debug = True
+    #app.run()
