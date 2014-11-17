@@ -48,7 +48,6 @@ if __name__ == "__main__":
     #print "\n\n"
 <<<<<<< HEAD
     app.debug = True
-=======
     print response2
     print "\n\n"
     #print response3
@@ -58,5 +57,4 @@ if __name__ == "__main__":
     #print response5
     #print "\n\n"
     #app.debug = True
->>>>>>> 67b4e4456e967150adc38167362ae709bdd30da3
     #app.run()
