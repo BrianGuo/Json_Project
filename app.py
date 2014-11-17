@@ -21,16 +21,17 @@ request5 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/names.json
 books = urlopen(request5)
 response5 = books.read()
 
+diction = response.split()
 
 #"http://api.nytimes.com/svc/books/v2/lists/hardcover-fiction.json?&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313"
 
 @app.route("/")
 @app.route("/search")
 def search():
-    return render_template("search.html")
+    return render_template("search.html", methods = ["GET","POST"])
 
 if __name__ == "__main__":
-    #print response
+    print diction
     #print "\n\n"
     app.debug = True
-    app.run()
+    #app.run()
