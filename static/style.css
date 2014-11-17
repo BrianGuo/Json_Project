@@ -4,15 +4,25 @@ body{
   background: #000000;
 }
 
-ul {
+#menu ul {
     height: auto;
     padding: 8px 0px;
     margin: 0px;
 }
 
-li { 
+#menu li { 
     display: inline; 
     padding: 20px; 
+}
+
+#menu a{
+  font-family: Courier New;
+  color: gray;
+  display: inline;
+  margin: 20px auto;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 20px;
 }
 
 h1{
@@ -45,7 +55,7 @@ input:focus{
 
 input[type="submit"]{
   display: block;
-  background: #000000;
+  background: #008000;
   width: 100px;
   padding: 10px;
   cursor: pointer;
@@ -60,7 +70,7 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-  background: #696969
+  background: #32cd32
 }
 
 a{
