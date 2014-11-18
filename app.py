@@ -12,7 +12,7 @@ response = books.read()
 request2 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists.json?list-name=Combined+Print+And+E-book+Fiction&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
 books = urlopen(request2)
 response2 = books.read()
-request3 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/best-sellers/history.json?&age-group=All+ages&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
+request3 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/best-sellers/history.json?&author=Gillian+Flynn&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
 books = urlopen(request3)
 response3 = books.read()
 request4 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/overview.json?published_date=2013-05-14&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
@@ -36,9 +36,13 @@ def search():
 @app.route("/results", methods=['GET','POST'])
 def results():
 	if request.method=="POST":
-		genre = request.form['genre']
-		url = "http://api.nytimes.com/svc/books/v2/lists.json?list-name=%s&api-key=%s" % (genre, key)
-		book = request.form['book']
+		author = request.form['author']
+        author = author.replace(" ", "+")
+        author = "author="+author
+        title = request.form['book']
+        title = title.replace(" ", "+")
+        title = "title="+title
+		url = "http://api.nytimes.com/svc/books/v2/lists.json?%s&%s&api-key=%s" % (author,title,key)
 		request2 = urllib2.Request(url)
 		booklist = urlopen(request2)
 		response2 = booklist.read()
@@ -47,7 +51,7 @@ def results():
 
 if __name__ == "__main__":
     app.debug = True
-    print response2
+    print response3
     print "\n\n"
     #print response3
     #print "\n\n"
