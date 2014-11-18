@@ -4,6 +4,14 @@ body{
   background: #000000;
 }
 
+h3{
+    font-family: Arial;
+    color: white;
+    display: block;
+    margin: 5px auto;
+    font-size: 24px;
+}
+
 #menu ul {
     height: auto;
     padding: 8px 0px;
