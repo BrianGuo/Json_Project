@@ -16,9 +16,15 @@
     </div>
 
     <h1>TOP 10 RESULTS:</h1>
-
-    <!-- write results here -->
-    
+    <table>
+      <!-- write results here -->
+      {% for x in booklist %}
+      <tr>
+	<td><br>{{x[0]}}<!--change this--><br><br></td>
+      </tr>
+      <!-- end for -->
+      {% endfor %}
+    </table>
     <a href="/">SEARCH AGAIN<a>
 	
 
