@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 #http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers
 #New York Times Best Selling Books API
-import urllib2
+import urllib2, json
 from urllib2 import urlopen
 app = Flask(__name__)
 request = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/names.json?api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
@@ -20,12 +20,14 @@ response4 = books.read()
 request5 = urllib2.Request("http://api.nytimes.com/svc/books/v2/lists/names.json?api-key=aed470a02daf0898f629d3784516e2d4:11:70183313")
 books = urlopen(request5)
 response5 = books.read()
+booksdict = json.loads(response)
+
 
 
 #"http://api.nytimes.com/svc/books/v2/lists/hardcover-fiction.json?&api-key=aed470a02daf0898f629d3784516e2d4:11:70183313"
 
 if __name__ == "__main__":
-    print response
+    """print response
     print "\n\n"
     print response2
     print "\n\n"
@@ -33,4 +35,6 @@ if __name__ == "__main__":
     print "\n\n"
     print response4
     print "\n\n"
-    print response5
+    print response5"""
+    print booksdict["results"][2]["updated"]
+
