@@ -48,13 +48,14 @@ def results():
         booklist = urlopen(request7)
         response7 = booklist.read()
         booksdict = json.loads(response7)
-        webtitle = booksdict['results'][0]['title']
-        print webtitle
-        webauthor = booksdict['results'][0]['author']
-        print webauthor
-        webdescription = booksdict['results'][0]['description']
-        webprice = booksdict['results'][0]['price']
-        return render_template('results.html', title=webtitle,author=webauthor, description=webdescription, price=webprice )
+        comments = []
+        for x in booksdict['results'] :
+            comments.append(x['title'])
+        #webtitle = booksdict['results'][0]['title']
+        #webauthor = booksdict['results'][0]['author']
+        #webdescription = booksdict['results'][0]['description']
+        #webprice = booksdict['results'][0]['price']
+        return render_template('results.html', comments=comments)
     if request.method == 'GET':
         return render_template('results.html')
         

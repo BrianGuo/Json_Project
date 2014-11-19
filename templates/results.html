@@ -15,24 +15,17 @@
       </ul>
     </div>
 
-    <h1>TOP 10 RESULTS:</h1>
+    <h1>TOP 10 RESULTS:</h1><center>
     <table>
+      <tbody>
+      <!-- FOR EACH COMMMENT FROM DB -->
+      {% for i in comments %}
       <tr>
-	<td><br><h3>{{title}}</h3><br><br></td>
+        <td><br><font color="white"><center>{{comments.index(i)+1}}.{{i}}</center></font><br><br></td>
       </tr>
-      <tr>
-  <td><br><h3>{{author}}</h3><br><br></td>
-      </tr>
-      <tr>
-  <td><br><h3>{{description}}</h3><br><br></td>
-      </tr>
-      <tr>
-  <td><br><h3>{{price}}</h3><br><br></td>
-      </tr>
-      <tr>
-    </table>
-    <a href="/">SEARCH AGAIN<a>
-	
-
+      <!-- end for -->
+      {% endfor %}
+	   </table>
+   </center>
   </body>
 </html>
